@@ -12,8 +12,7 @@
             <h2 style="font-family: 'NanumSquareB'">
                 {{ target_user.profile.nickname }}
                     {% if target_user == user %}
-                    <a href="{% url 'profileapp:update' pk=target_user.profile.pk %}"
-                       class="material-icons round_button">
+                    <a href="{% url 'profileapp:update' pk=target_user.profile.pk %}">
                         edit
                     </a>
                     {% endif %}
@@ -53,3 +52,6 @@
     </div>
 
 {% endblock %}
+
+
+                       class="material-icons round_button"
