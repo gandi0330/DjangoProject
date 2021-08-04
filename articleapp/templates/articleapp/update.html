@@ -7,11 +7,16 @@
         <div class="mb-4">
             <h4>Update Article</h4>
         </div>
-        <form action="{% url 'articleapp:update' pk=target_article.pk %}" method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            {% bootstrap_form form %}
-            <input type="submit" class="btn btn-dark rounded-pill px-5">
-        </form>
+        <div>
+            <form action="{% url 'articleapp:update' pk=target_article.pk %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% bootstrap_form form %}
+                <div class="m-5">
+                    <input type="submit"
+                           class="btn btn-dark rounded-pill px-5">
+                </div>
+            </form>
+        </div>
     </div>
 
 
