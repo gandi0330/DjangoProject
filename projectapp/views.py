@@ -45,7 +45,7 @@ class ProjectDetailView(DetailView, MultipleObjectMixin):
                                                                    **kwargs)
 
 
-    
+
 
 class ProjectListView(ListView):
     model = Project
