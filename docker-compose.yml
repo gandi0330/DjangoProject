@@ -20,7 +20,10 @@ services:
     volumes:
       - djangoproject_static:/home/DjangoProject/staticfiles/
       - djangoproject_media:/home/DjangoProject/media/
-
+    secrets:
+      - DJANGO_SECRET_KEY
+      - MARIADB_USER
+      - MARIADB_PASSWORD
 
   mariadb:
     image: mariadb:10.5
@@ -33,6 +36,10 @@ services:
       MARIADB_DATABASE: django
       MARIADB_USER: django
       MARIADB_PASSWORD: password1234
+    secrets:
+      - MARIADB_ROOT_PASSWORD
+      - MARIADB_USER
+      - MARIADB_PASSWORD
 
 networks:
   django_project_network:
@@ -41,3 +48,7 @@ volumes:
   djangoproject_static:
   djangoproject_media:
   djangoproject_mariadb:
+
+secrets:
+  DJANGO_SECRET_KEY:
+    external: true
